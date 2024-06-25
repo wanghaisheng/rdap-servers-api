@@ -1,12 +1,13 @@
 const validator = require('validator');
 const tldextract = require('tld-extract');
-import { connect } from 'cloudflare:sockets';
+// import { connect } from 'cloudflare:sockets';
 import { containsCidr } from 'cidr-tools';
 import Rdap from './rdap'
 import Whois from './whois';
 import parseRawData from './parser';
 import Package from '../package-lock.json';
 
+import connect from 'arrowood.dev/socket'
 class Lookup {
     constructor(target) {
         this.target = target
